@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SalaryCalculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //while (true)
+            //{
+            //    //Initialization.InitializeMember();
+
+            //}
+            //Initialization.InitializeMember();
+            MembersInCompany membersIn = new MembersInCompany();
+            membersIn.AddMembers();
+            Console.ReadLine();
+        }
+    }
+}

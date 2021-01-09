@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryProject", "SalaryProject\SalaryProject.csproj", "{A587EB40-AD1B-47F9-A57C-777FBD534150}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalaryCalculator", "SalaryCalculator\SalaryCalculator.csproj", "{D7E8CB46-A739-49A3-B611-9336C85C7CDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A587EB40-AD1B-47F9-A57C-777FBD534150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A587EB40-AD1B-47F9-A57C-777FBD534150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A587EB40-AD1B-47F9-A57C-777FBD534150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7E8CB46-A739-49A3-B611-9336C85C7CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7E8CB46-A739-49A3-B611-9336C85C7CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7E8CB46-A739-49A3-B611-9336C85C7CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7E8CB46-A739-49A3-B611-9336C85C7CDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
