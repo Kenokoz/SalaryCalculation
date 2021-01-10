@@ -44,15 +44,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CorrectName.cs" />
-    <Compile Include="Members\FreelancerModel.cs" />
-    <Compile Include="Members\EmployeeModel.cs" />
-    <Compile Include="Members\HeaderModel.cs" />
-    <Compile Include="IMemberModel.cs" />
+    <Compile Include="DataOfMember.cs" />
+    <Compile Include="Messages\EmployeeMessage.cs" />
+    <Compile Include="Messages\FreelancerMessage.cs" />
+    <Compile Include="Messages\HeaderMessage.cs" />
+    <Compile Include="Members\Freelancer.cs" />
+    <Compile Include="Members\Employee.cs" />
+    <Compile Include="Members\Header.cs" />
+    <Compile Include="IMember.cs" />
     <Compile Include="Initialization.cs" />
     <Compile Include="MembersInCompany.cs" />
-    <Compile Include="Paths.cs" />
+    <Compile Include="Messages\IMemberMessage.cs" />
+    <Compile Include="Path.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Messages\StandardMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

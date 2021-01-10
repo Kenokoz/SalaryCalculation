@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator
 {
-    public class HeaderModel : IMemberModel
+    public class Freelancer : IMember
     {
         public string Name { get; set; }
         public string Post { get; set; }
-        public List<string> Headers { get; set; }
+        public IMemberMessage ShowMessage { get; set; } = new FreelancerMessage();
     }
 }

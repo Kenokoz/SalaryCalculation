@@ -8,43 +8,46 @@ using System.Threading.Tasks;
 namespace SalaryCalculator
 {
     class Initialization
-    {        
-        //public static void InitializeMember()
-        //{
-        //    Console.WriteLine("Введите ваше имя:");
-        //    string inputName = CorrectName.GetName();
+    {
+        public static void InitializeMember()
+        {
+            StandardMessage.EnterName();
+            string inputName = CorrectName.GetName();
 
-        //    string personName;
-        //    foreach (var person in MembersInCompany.members)
-        //    {
-        //        personName = person.Split(new char[] { ',' })[0];
-        //        if (personName == inputName)
-        //        {
-        //            // Вызов приветствия
-        //            Console.WriteLine($"I am here {person}");
-        //            return;
-        //        }
-        //    }
+            ;
+            foreach (var person in MembersInCompany.members)
+            {
+                DataOfMember.GetDataOfMember(person);
+                if (DataOfMember.Name == inputName)
+                {
+                    // Вызов приветствия
+                    switch (DataOfMember.Post)
+                    {
+                        case "header":
+                            {
+                                Header header = new Header {Name = DataOfMember.Name, Post = DataOfMember.Post};
+                                header.ShowMessage.GreetMessage(header);
+                                break;
+                            }
+                        case "employee":
+                            {
+                                Employee employee = new Employee { Name = DataOfMember.Name, Post = DataOfMember.Post};
+                                employee.ShowMessage.GreetMessage(employee);
+                                break;
+                            }
+                        case "freelancer":
+                            {
+                                Freelancer freelancer = new Freelancer { Name = DataOfMember.Name, Post = DataOfMember.Post};
+                                freelancer.ShowMessage.GreetMessage(freelancer);
+                                break;
+                            }
+                    }
+                    return;
+                }
+            }
 
-        //    Console.WriteLine("Такого сотрудника не существует. Повторите попытку.");
-        //    InitializeMember();
-        //}
-
-        //static public bool IsMemberExists()
-        //{
-        //    using (StreamReader sr = new StreamReader(Paths.toMembers))
-        //    {
-        //        string member;
-        //        while ((member = sr.ReadLine()) != null)
-        //        {
-        //            string[] firstWord = member.Split(new char[] { ',' });
-        //            if (firstWord[0] == inputName)
-        //            {
-        //                return true;
-        //            }
-        //        }
-        //        return false;
-        //    }
-        //}
+            StandardMessage.MemberIsNotExists();
+            InitializeMember();
+        }
     }
 }

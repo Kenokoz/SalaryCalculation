@@ -13,10 +13,10 @@ namespace SalaryProject
     {
         protected static int hours;
 
-        protected static string pathEmployees = @"C:\Users\Кирилл\Desktop\Project\Список сотрудников.txt";
-        protected static string pathEmpSalary = @"C:\Users\Кирилл\Desktop\Project\Список отработанных часов сотрудников на зарплате.txt";
-        protected static string pathHeaders = @"C:\Users\Кирилл\Desktop\Project\Список отработанных часов руководителей.txt";
-        protected static string pathFreelancers = @"C:\Users\Кирилл\Desktop\Project\Список отработанных часов внештатных сотрудников.txt";
+        protected static string pathEmployees = @"..\..\..\Members.txt";
+        protected static string pathEmpSalary = @"..\..\..\HoursOfEmployees.txt";
+        protected static string pathHeaders = @"..\..\..\HoursOfHeaders.txt";
+        protected static string pathFreelancers = @"..\..\..\HoursOfFreelancers.txt";
 
         static public string PathEmployees { get { return pathEmployees; } }
         static public string PathEmpSalary { get { return pathEmpSalary; } }

@@ -15,9 +15,7 @@ namespace SalaryCalculator
             //    //Initialization.InitializeMember();
 
             //}
-            //Initialization.InitializeMember();
-            MembersInCompany membersIn = new MembersInCompany();
-            membersIn.AddMembers();
+            Initialization.InitializeMember();
             Console.ReadLine();
         }
     }
