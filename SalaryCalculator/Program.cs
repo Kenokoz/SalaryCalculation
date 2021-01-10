@@ -16,7 +16,6 @@ namespace SalaryCalculator
 
             //}
             Initialization.InitializeMember();
-            Console.WriteLine("Test");
             Console.ReadLine();
         }
     }
