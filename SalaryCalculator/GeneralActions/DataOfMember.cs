@@ -8,8 +8,11 @@ namespace SalaryCalculator
 {
     public class DataOfMember
     {
+
         public static string Name { get; private set; }
         public static string Post { get; private set; }
+        public static int Hours { get; private set; }
+        public static int Salary { get; private set; }
         
         public static void GetDataOfMember(string member)
         {
@@ -17,5 +20,9 @@ namespace SalaryCalculator
             Name = personData[0];
             Post = personData[1];
         }
+
+        
+
+        
     }
 }

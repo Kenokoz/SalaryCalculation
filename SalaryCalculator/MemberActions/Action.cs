@@ -16,8 +16,7 @@ namespace SalaryCalculator
                     AddHoursForEmployee(member);
                     break;
                 case 2:
-                    //Actions.ReadReportEmp(name, Actions.PathEmpSalary);
-                    //Continue();
+                    ReadReportAndSalary(member);
                     break;
                 case 3:
                     Environment.Exit(0);
@@ -39,8 +38,26 @@ namespace SalaryCalculator
             member.ShowMessage.EnterWhatDid();
             Information.Doing = Console.ReadLine();
 
-            // TODO: Name
             Information.WriteHoursOfMember(member.Name);
         }
+
+        public void ReadReportAndSalary(IMember member)
+        {
+            try
+            {
+                Console.WriteLine($"Отчет по сотруднику: {member.Name} за период с {DatePeriod.StartDate.ToShortDateString()} " +
+                    $"по {DatePeriod.FinishDate.ToShortDateString()}");
+
+                CalcSalary.GetSalaryOfMember(member);
+
+                Console.WriteLine($"Итого: {member.Hours} часов," + $" заработано: {member.Salary} руб");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Некорректный ввод даты! Попробуйте еще раз.");
+                ReadReportAndSalary(member);
+            }
+        }
+
     }
 }

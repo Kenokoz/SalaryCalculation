@@ -43,11 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\Action.cs" />
+    <Compile Include="GeneralActions\CalcSalary.cs" />
+    <Compile Include="MemberActions\Action.cs" />
     <Compile Include="CorrectName.cs" />
-    <Compile Include="DataOfMember.cs" />
-    <Compile Include="Actions\HeaderAction.cs" />
-    <Compile Include="Actions\IAction.cs" />
+    <Compile Include="GeneralActions\DataOfMember.cs" />
+    <Compile Include="MemberActions\HeaderAction.cs" />
+    <Compile Include="MemberActions\IAction.cs" />
+    <Compile Include="GeneralActions\DatePeriod.cs" />
     <Compile Include="Messages\EmployeeMessage.cs" />
     <Compile Include="Messages\FreelancerMessage.cs" />
     <Compile Include="Messages\HeaderMessage.cs" />

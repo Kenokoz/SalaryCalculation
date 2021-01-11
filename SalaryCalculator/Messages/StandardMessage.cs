@@ -17,5 +17,15 @@ namespace SalaryCalculator
         {
             Console.WriteLine("Такого сотрудника не существует. Повторите попытку.");
         }
+
+        public static void EnterFromDate()
+        {
+            Console.WriteLine("Введите с какого числа:");
+        }
+
+        public static void EnterToDate()
+        {
+            Console.WriteLine("Введите по какое число:");
+        }
     }
 }
