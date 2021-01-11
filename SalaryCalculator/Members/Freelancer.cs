@@ -11,5 +11,6 @@ namespace SalaryCalculator
         public string Name { get; set; }
         public string Post { get; set; }
         public IMemberMessage ShowMessage { get; set; } = new FreelancerMessage();
+        public IAction Action { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

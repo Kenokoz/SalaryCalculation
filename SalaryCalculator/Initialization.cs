@@ -33,6 +33,9 @@ namespace SalaryCalculator
                             {
                                 Employee employee = new Employee { Name = DataOfMember.Name, Post = DataOfMember.Post};
                                 employee.ShowMessage.GreetMessage(employee);
+
+                                int act = int.Parse(Console.ReadLine());
+                                employee.Action.ChooseAction(employee, act);
                                 break;
                             }
                         case "freelancer":

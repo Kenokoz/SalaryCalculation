@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator
 {
-    public class HeaderMessage : IMemberMessage
+    public class HeaderMessage : MemberMessage, IMemberMessage
     {
-        public void GreetMessage(IMember member)
+        public override void GreetMessage(IMember member)
         {
             Console.WriteLine($"Здравствуйте, {member.Name}!");
             Console.WriteLine($"Ваша роль: {member.Post}");

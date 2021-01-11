@@ -9,5 +9,8 @@ namespace SalaryCalculator
     public interface IMemberMessage
     {
         void GreetMessage(IMember member);
+        void EnterDateToAddHours();
+        void EnterAmountOfHours();
+        void EnterWhatDid();
     }
 }
