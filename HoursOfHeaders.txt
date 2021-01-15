@@ -1,5 +1,5 @@
-05.01.2021, Andreev, 6, Hjsjndn sndajsdn sadaj
-06.01.2021, Andreev, 5, sadasdca asdasdasd
-10.01.2021, Andreev, 12, wqeqweqdsdqwe eqweqweq
-15.01.2021, Petrov, 8, jkhjmh mhjmhjmh
-25.01.2021, Andreev, 3, iuouiouyiuyi uyi yuiy
+05.01.2021,Andreev,6,Hjsjndn sndajsdn sadaj
+06.01.2021,Andreev,5,sadasdca asdasdasd
+10.01.2021,Andreev,12,wqeqweqdsdqwe eqweqweq
+15.01.2021,Petrov,8,jkhjmh mhjmhjmh
+25.01.2021,Andreev,3,iuouiouyiuyi uyi yuiy

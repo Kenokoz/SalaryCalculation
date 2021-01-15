@@ -11,6 +11,6 @@ namespace SalaryCalculator
         void GreetMessage(IMember member);
         void EnterDateToAddHours();
         void EnterAmountOfHours();
-        void EnterWhatDid();
+        void EnterWhatYouDid();
     }
 }

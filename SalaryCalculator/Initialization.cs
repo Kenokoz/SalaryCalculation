@@ -12,36 +12,42 @@ namespace SalaryCalculator
         public static void InitializeMember()
         {
             StandardMessage.EnterName();
-            string inputName = CorrectName.GetName();
+            string inputName = ValidInputValue.GetName();
 
             ;
-            foreach (var person in MembersInCompany.members)
+            foreach (var member in MembersInCompany.members)
             {
-                DataOfMember.GetDataOfMember(person);
-                if (DataOfMember.Name == inputName)
+                //DataOfMember.GetDataOfMember(person);
+                if (member.Name == inputName)
                 {
                     // Вызов приветствия
-                    switch (DataOfMember.Post)
+                    switch (member.Post)
                     {
                         case "header":
                             {
-                                Header header = new Header {Name = DataOfMember.Name, Post = DataOfMember.Post};
+                                Header header = new Header {Name = member.Name, Post = member.Post};
                                 header.ShowMessage.GreetMessage(header);
+
+                                int act = int.Parse(Console.ReadLine());
+                                HeaderTypeOfAction.ChooseAction(header,act);
                                 break;
                             }
                         case "employee":
                             {
-                                Employee employee = new Employee { Name = DataOfMember.Name, Post = DataOfMember.Post};
+                                Employee employee = new Employee { Name = member.Name, Post = member.Post};
                                 employee.ShowMessage.GreetMessage(employee);
 
                                 int act = int.Parse(Console.ReadLine());
-                                employee.Action.ChooseAction(employee, act);
+                                TypeOfAction.ChooseAction(employee, act);
                                 break;
                             }
                         case "freelancer":
                             {
-                                Freelancer freelancer = new Freelancer { Name = DataOfMember.Name, Post = DataOfMember.Post};
+                                Freelancer freelancer = new Freelancer { Name = member.Name, Post = member.Post};
                                 freelancer.ShowMessage.GreetMessage(freelancer);
+
+                                int act = int.Parse(Console.ReadLine());
+                                TypeOfAction.ChooseAction(freelancer, act);
                                 break;
                             }
                     }
@@ -49,7 +55,7 @@ namespace SalaryCalculator
                 }
             }
 
-            StandardMessage.MemberIsNotExists();
+            ErrorMessage.MemberIsNotExists();
             InitializeMember();
         }
     }

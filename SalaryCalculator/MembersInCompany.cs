@@ -9,24 +9,54 @@ namespace SalaryCalculator
 {
     public class MembersInCompany
     {
-        public static List<string> members = GetMembers();
-        public static List<string> reportOfMembers = GetReportOfMembers();
+        public static List<IMember> members = GetMembersList();
 
-        private static List<string> GetMembers()
+        private static List<IMember> GetMembersList()
         {
-            List<string> members = new List<string>();
+            List<IMember> members = new List<IMember>();
 
             using (StreamReader sr = new StreamReader(Path.toMembers))
             {
-                string memb;
-                while ((memb = sr.ReadLine()) != null)
+                string member;
+                while ((member = sr.ReadLine()) != null)
                 {
-                    members.Add(memb);
+                    string[] dataOfMember = member.Split(new char[] { ',' });
+                    switch (dataOfMember[1])
+                    {
+                        case "header":
+                            members.Add(new Header { Name = dataOfMember[0], Post = dataOfMember[1] });
+                            break;
+                        case "employee":
+                            members.Add(new Employee { Name = dataOfMember[0], Post = dataOfMember[1] });
+                            break;
+                        case "freelancer":
+                            members.Add(new Freelancer { Name = dataOfMember[0], Post = dataOfMember[1] });
+                            break;
+                    }
                 }
             }
 
             return members;
         }
+
+        //public static List<string> members = GetMembers();
+        public static List<string> reportOfMembers = GetReportOfMembers();
+
+        //private static List<string> GetMembers()
+        //{
+        //    List<string> members = new List<string>();
+
+        //    using (StreamReader sr = new StreamReader(Path.toMembers))
+        //    {
+        //        string memb;
+        //        while ((memb = sr.ReadLine()) != null)
+        //        {
+        //            members.Add(memb);
+        //        }
+        //    }
+
+        //    return members;
+        //}
 
         private static List<string> GetReportOfMembers()
         {

@@ -8,12 +8,7 @@ namespace SalaryCalculator
 {
     public class MemberMessage : IMemberMessage
     {
-        public virtual void GreetMessage(IMember member)
-        {
-            Console.WriteLine($"Здравствуйте, {member.Name}!");
-            Console.WriteLine($"Ваша роль: {member.Post}");
-            Console.WriteLine("Выберите желаемое действие:");
-        }
+        public virtual void GreetMessage(IMember member) { }
 
         public void EnterDateToAddHours()
         {
@@ -25,7 +20,7 @@ namespace SalaryCalculator
             Console.WriteLine("Введите количество часов:");
         }
 
-        public void EnterWhatDid()
+        public void EnterWhatYouDid()
         {
             Console.WriteLine("Введите что делали:");
         }

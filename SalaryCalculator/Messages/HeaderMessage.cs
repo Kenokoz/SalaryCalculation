@@ -6,18 +6,23 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator
 {
-    public class HeaderMessage : MemberMessage, IMemberMessage
+    public class HeaderMessage : MemberMessage, IHeaderMessage
     {
-        public override void GreetMessage(IMember member)
+        public override void GreetMessage(IMember header)
         {
-            Console.WriteLine($"Здравствуйте, {member.Name}!");
-            Console.WriteLine($"Ваша роль: {member.Post}");
+            Console.WriteLine($"Здравствуйте, {header.Name}!");
+            Console.WriteLine($"Ваша роль: {header.Post}");
             Console.WriteLine("Выберите желаемое действие:");
             Console.WriteLine("(1). Добавить сотрудника");
             Console.WriteLine("(2). Просмотреть отчет по всем сотрудникам");
             Console.WriteLine("(3). Просмотреть отчет по конкретному сотруднику");
             Console.WriteLine("(4). Добавить часы работы");
             Console.WriteLine("(5). Выход из программы");
+        }
+
+        public void EnterNameOfMember()
+        {
+            Console.WriteLine("Введите имя сотрудника:");
         }
     }
 }

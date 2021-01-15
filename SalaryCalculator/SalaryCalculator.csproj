@@ -44,13 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneralActions\CalcSalary.cs" />
-    <Compile Include="MemberActions\Action.cs" />
-    <Compile Include="CorrectName.cs" />
-    <Compile Include="GeneralActions\DataOfMember.cs" />
-    <Compile Include="MemberActions\HeaderAction.cs" />
-    <Compile Include="MemberActions\IAction.cs" />
+    <Compile Include="MemberActions\EmpFreelActions\AddingHours.cs" />
+    <Compile Include="MemberActions\HeaderActions\AddingHoursForMember.cs" />
+    <Compile Include="MemberActions\HeaderActions\AddingMember.cs" />
+    <Compile Include="MemberActions\HeaderActions\ReadingAllReports.cs" />
+    <Compile Include="MemberActions\EmpFreelActions\ReadingReport.cs" />
+    <Compile Include="MemberActions\HeaderActions\ReadingMemberReport.cs" />
+    <Compile Include="ValidInputValue.cs" />
+    <Compile Include="MemberActions\TypeOfAction\TypeOfAction.cs" />
+    <Compile Include="MemberActions\TypeOfAction\HeaderTypeOfAction.cs" />
     <Compile Include="GeneralActions\DatePeriod.cs" />
     <Compile Include="Messages\EmployeeMessage.cs" />
+    <Compile Include="Messages\ErrorMessage.cs" />
     <Compile Include="Messages\FreelancerMessage.cs" />
     <Compile Include="Messages\HeaderMessage.cs" />
     <Compile Include="Members\Freelancer.cs" />
@@ -59,6 +64,7 @@
     <Compile Include="Members\IMember.cs" />
     <Compile Include="Initialization.cs" />
     <Compile Include="MembersInCompany.cs" />
+    <Compile Include="Messages\IHeaderMessage.cs" />
     <Compile Include="Messages\IMemberMessage.cs" />
     <Compile Include="Messages\MemberMessage.cs" />
     <Compile Include="Path.cs" />

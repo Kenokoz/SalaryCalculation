@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator
 {
-    public class StandardMessage
+    public static class StandardMessage
     {
         public static void EnterName()
         {
             Console.WriteLine("Введите ваше имя:");
-        }
-
-        public static void MemberIsNotExists()
-        {
-            Console.WriteLine("Такого сотрудника не существует. Повторите попытку.");
         }
 
         public static void EnterFromDate()
@@ -27,5 +22,6 @@ namespace SalaryCalculator
         {
             Console.WriteLine("Введите по какое число:");
         }
+
     }
 }

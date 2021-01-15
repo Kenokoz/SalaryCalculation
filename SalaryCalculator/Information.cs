@@ -14,11 +14,25 @@ namespace SalaryCalculator
         public static string Doing { get; set; }
 
 
-        public static void WriteHoursOfMember(string name)
+        public static void WriteHoursOfMember(string name, string post)
         {
-            using (StreamWriter sr = new StreamWriter(Path.toHoursOfEmployees, true))
+            string path = null;
+
+            switch (post)
             {
-                sr.WriteLine($"{Date}, {name}, {Hours}, {Doing}");
+                case "header":
+                    path = Path.toHoursOfHeaders;
+                    break;
+                case "employee":
+                    path = Path.toHoursOfEmployees;
+                    break;
+                case "freelancer":
+                    path = Path.toHoursOfFreelancers;
+                    break;
+            }
+            using (StreamWriter sr = new StreamWriter(path, true))
+            {
+                sr.WriteLine($"{Date},{name},{Hours},{Doing}");
             }
         }
     }

@@ -12,18 +12,19 @@ namespace SalaryCalculator
         {
             int sumHours = 0;
 
-            foreach (var person in MembersInCompany.reportOfMembers)
+            foreach (var report in MembersInCompany.reportOfMembers)
             {
-                string[] personRep = person.Trim().Split(new char[] { ',' });
+                string[] personRep = report.Trim().Split(new char[] { ',' });
                 string dateOfPersonRep = personRep[0];
+                DateTime datePerson = Convert.ToDateTime(dateOfPersonRep);
                 DateTime datePlus = DatePeriod.StartDate;
 
 
-                if (person.Contains(member.Name) && Convert.ToDateTime(dateOfPersonRep) >= datePlus)
+                if (report.Contains(member.Name) && (datePerson >= datePlus && datePerson <= DatePeriod.FinishDate))
                 {
                     while (datePlus <= DatePeriod.FinishDate)
                     {
-                        if (person.Contains(dateOfPersonRep))
+                        if (report.Contains(dateOfPersonRep))
                         {
                             int hoursOfPersonRep = Convert.ToInt32(personRep[2]);
 
