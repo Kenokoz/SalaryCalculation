@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator
 {
-    public class HeaderMessage : MemberMessage, IHeaderMessage
+    public static class HeaderMessage
     {
-        public override void GreetMessage(IMember header)
+        public static void GreetMessageForHeader(IMember header)
         {
             Console.WriteLine($"Здравствуйте, {header.Name}!");
             Console.WriteLine($"Ваша роль: {header.Post}");
@@ -20,9 +20,27 @@ namespace SalaryCalculator
             Console.WriteLine("(5). Выход из программы");
         }
 
-        public void EnterNameOfMember()
+        public static void EnterNameOfMember()
         {
             Console.WriteLine("Введите имя сотрудника:");
         }
+
+        public static void EnterWhatMemberDid()
+        {
+            Console.WriteLine("Введите что делал сотрудник:");
+        }
+
+        public static void EnterPostOfMember()
+        {
+            Console.WriteLine("Введите должность сотрудника ('header', 'employee', 'freelancer'):");
+        }
+
+        public static void MemberReportForPeriod(IMember member)
+        {
+            Console.WriteLine($"Отчет по сотруднику: {member.Name} за период с {DatePeriod.StartDate.ToShortDateString()} " +
+                    $"по {DatePeriod.FinishDate.ToShortDateString()}");
+        }
+
+
     }
 }

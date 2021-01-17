@@ -8,26 +8,26 @@ namespace SalaryCalculator
 {
     public class AddingHoursForMember
     {
-        public static void AddHoursForMember(IMember member)
+        public static void AddHoursForMember()
         {
-            Console.WriteLine("Введите имя сотрудника:");
+            HeaderMessage.EnterNameOfMember();
             string name = ValidInputValue.GetName();
 
-            member.ShowMessage.EnterDateToAddHours();
+            StandardMessage.EnterDateToAddHours();
             DateTime enterDate = DateTime.Parse(Console.ReadLine());
-            Information.Date = enterDate.ToShortDateString();
+            MemberInformation.Date = enterDate.ToShortDateString();
 
-            member.ShowMessage.EnterAmountOfHours();
-            Information.Hours = int.Parse(Console.ReadLine());
+            StandardMessage.EnterAmountOfHours();
+            MemberInformation.Hours = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Введите что делал сотрудник:");
-            Information.Doing = Console.ReadLine();
+            HeaderMessage.EnterWhatMemberDid();
+            MemberInformation.Doing = Console.ReadLine();
 
             foreach (var memb in MembersInCompany.members)
             {
                 if (memb.Name == name)
                 {
-                    Information.WriteHoursOfMember(name, memb.Post);
+                    MemberInformation.WriteHoursOfMember(name, memb.Post);
                     break;
                 }
             }

@@ -8,8 +8,10 @@ namespace SalaryCalculator
 {
     class HeaderTypeOfAction
     {
-        public static void ChooseAction(IMember header, int act)
+        public static void ChooseAction(IMember header)
         {
+            int act = int.Parse(Console.ReadLine());
+
             switch (act)
             {
                 case 1:
@@ -22,13 +24,13 @@ namespace SalaryCalculator
                     ReadingMemberReport.ReadMemberReport();
                     break;
                 case 4:
-                    AddingHoursForMember.AddHoursForMember(header);
+                    AddingHoursForMember.AddHoursForMember();
                     break;
                 case 5:
                     Environment.Exit(0);
                     break;
                 default:
-                    Console.WriteLine("Неверное действие. Нажмите enter, чтобы повторить попытку");
+                    ErrorMessage.WrongAction();
                     break;
             }
         }

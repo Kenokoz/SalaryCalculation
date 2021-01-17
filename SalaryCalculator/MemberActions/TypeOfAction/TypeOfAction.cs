@@ -8,8 +8,10 @@ namespace SalaryCalculator
 {
     public class TypeOfAction
     {
-        public static void ChooseAction(IMember member, int act)
+        public static void ChooseAction(IMember member)
         {
+            int act = int.Parse(Console.ReadLine());
+
             switch (act)
             {
                 case 1:
@@ -22,7 +24,7 @@ namespace SalaryCalculator
                     Environment.Exit(0);
                     break;
                 default:
-                    Console.WriteLine("Неверное действие.");
+                    ErrorMessage.WrongAction();
                     break;
             }
         }

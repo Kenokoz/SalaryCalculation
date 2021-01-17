@@ -10,6 +10,7 @@ namespace SalaryCalculator
     public class MembersInCompany
     {
         public static List<IMember> members = GetMembersList();
+        public static List<string> reportOfMembers = GetReportOfMembers();
 
         private static List<IMember> GetMembersList()
         {
@@ -38,25 +39,6 @@ namespace SalaryCalculator
 
             return members;
         }
-
-        //public static List<string> members = GetMembers();
-        public static List<string> reportOfMembers = GetReportOfMembers();
-
-        //private static List<string> GetMembers()
-        //{
-        //    List<string> members = new List<string>();
-
-        //    using (StreamReader sr = new StreamReader(Path.toMembers))
-        //    {
-        //        string memb;
-        //        while ((memb = sr.ReadLine()) != null)
-        //        {
-        //            members.Add(memb);
-        //        }
-        //    }
-
-        //    return members;
-        //}
 
         private static List<string> GetReportOfMembers()
         {

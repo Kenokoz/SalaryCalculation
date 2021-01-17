@@ -10,11 +10,10 @@ namespace SalaryCalculator
     {
         public static void ReadMemberReport()
         {
-            Console.WriteLine("Введите имя сотрудника:");
+            HeaderMessage.EnterNameOfMember();
             string name = ValidInputValue.GetName();
 
-            Console.WriteLine($"Отчет за период с {DatePeriod.StartDate.ToShortDateString()} по " +
-                    $"{DatePeriod.FinishDate.ToShortDateString()}");
+            StandardMessage.ReportForPeriod();
 
             foreach (var member in MembersInCompany.members)
             {
@@ -30,8 +29,7 @@ namespace SalaryCalculator
 
                         }
                     }
-                    Console.WriteLine($"{member.Name} отработал {member.Hours} часов и " +
-                                $"заработал за период {member.Salary} руб");
+                    HeaderMessage.MemberHoursAndSalaryForPeriod(member);
                     break;
                 }
             }

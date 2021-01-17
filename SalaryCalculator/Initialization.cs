@@ -13,50 +13,44 @@ namespace SalaryCalculator
         {
             StandardMessage.EnterName();
             string inputName = ValidInputValue.GetName();
-
-            ;
+                       
             foreach (var member in MembersInCompany.members)
             {
                 //DataOfMember.GetDataOfMember(person);
                 if (member.Name == inputName)
                 {
-                    // Вызов приветствия
-                    switch (member.Post)
+                    IMember person = CreateModel(member);
+                    
+                    if (person.Post == "header")
                     {
-                        case "header":
-                            {
-                                Header header = new Header {Name = member.Name, Post = member.Post};
-                                header.ShowMessage.GreetMessage(header);
-
-                                int act = int.Parse(Console.ReadLine());
-                                HeaderTypeOfAction.ChooseAction(header,act);
-                                break;
-                            }
-                        case "employee":
-                            {
-                                Employee employee = new Employee { Name = member.Name, Post = member.Post};
-                                employee.ShowMessage.GreetMessage(employee);
-
-                                int act = int.Parse(Console.ReadLine());
-                                TypeOfAction.ChooseAction(employee, act);
-                                break;
-                            }
-                        case "freelancer":
-                            {
-                                Freelancer freelancer = new Freelancer { Name = member.Name, Post = member.Post};
-                                freelancer.ShowMessage.GreetMessage(freelancer);
-
-                                int act = int.Parse(Console.ReadLine());
-                                TypeOfAction.ChooseAction(freelancer, act);
-                                break;
-                            }
+                        HeaderMessage.GreetMessageForHeader(person);
+                        HeaderTypeOfAction.ChooseAction(person);
                     }
+                    else
+                    {
+                        StandardMessage.GreetMessageForEmpAndFreelan(person);
+                        TypeOfAction.ChooseAction(person);
+                    }
+
                     return;
                 }
             }
 
             ErrorMessage.MemberIsNotExists();
             InitializeMember();
+        }
+
+        private static IMember CreateModel(IMember member)
+        {
+            switch (member.Post)
+            {
+                case "header":
+                    return new Header { Name = member.Name, Post = member.Post };
+                case "employee":
+                    return new Employee { Name = member.Name, Post = member.Post };
+                default:
+                    return new Freelancer { Name = member.Name, Post = member.Post };
+            }
         }
     }
 }

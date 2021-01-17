@@ -14,9 +14,9 @@ namespace SalaryCalculator
 
             while (!isDateCorrect)
             {
-                member.ShowMessage.EnterDateToAddHours();
+                StandardMessage.EnterDateToAddHours();
                 DateTime enterDate = DateTime.Parse(Console.ReadLine());
-                Information.Date = enterDate.ToShortDateString();
+                MemberInformation.Date = enterDate.ToShortDateString();
 
                 if (member.Post == "freelancer")
                 {
@@ -25,7 +25,7 @@ namespace SalaryCalculator
 
                     if (!isDateCorrect)
                     {
-                        Console.WriteLine("Вы не можете добавлять часы раньше, чем за 2 дня");
+                        ErrorMessage.CanNotAddHoursBeforeTwoDays();
                         continue;
                     }
                 }
@@ -35,13 +35,13 @@ namespace SalaryCalculator
                 }
             }
 
-            member.ShowMessage.EnterAmountOfHours();
-            Information.Hours = int.Parse(Console.ReadLine());
+            StandardMessage.EnterAmountOfHours();
+            MemberInformation.Hours = int.Parse(Console.ReadLine());
 
-            member.ShowMessage.EnterWhatYouDid();
-            Information.Doing = Console.ReadLine();
+            StandardMessage.EnterWhatYouDid();
+            MemberInformation.Doing = Console.ReadLine();
 
-            Information.WriteHoursOfMember(member.Name, member.Post);
+            MemberInformation.WriteHoursOfMember(member.Name, member.Post);
         }
     }
 }

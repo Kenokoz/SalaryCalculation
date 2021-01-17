@@ -22,7 +22,7 @@ namespace SalaryCalculator
 
             if (!isMemberExist)
             {
-                Console.WriteLine("Введите должность сотрудника ('header', 'employee', 'freelancer'):");
+                HeaderMessage.EnterPostOfMember();
                 string postOfMember = ValidInputValue.GetPost();
 
                 if (postOfMember == "header" || postOfMember == "employee" || postOfMember == "freelancer")
@@ -35,13 +35,13 @@ namespace SalaryCalculator
                 }
                 else
                 {
-                    Console.WriteLine("Такой должности не существует. Повторите попытку.");
+                    ErrorMessage.PostNotExist();
                 }
 
             }
             else
             {
-                Console.WriteLine("Такое имя уже записано!");
+                ErrorMessage.MemberExists();
             }
         }
     }

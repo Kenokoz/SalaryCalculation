@@ -10,8 +10,6 @@ namespace SalaryCalculator
     {
         public string Name { get; set; }
         public string Post { get; set; }
-        public IMemberMessage ShowMessage { get; set; } = new HeaderMessage();
-        public IHeaderMessage ShowHeaderMessage { get; set; } = new HeaderMessage();
         public int Hours { get; set; }
         public int Salary { get; set; }
 

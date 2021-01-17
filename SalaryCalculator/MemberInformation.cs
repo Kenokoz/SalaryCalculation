@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator
 {
-    public class Information
+    public class MemberInformation
     {
         public static string Date { get; set; }
         public static int Hours { get; set; }

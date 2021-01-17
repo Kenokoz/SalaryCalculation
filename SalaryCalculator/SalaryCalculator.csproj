@@ -50,28 +50,23 @@
     <Compile Include="MemberActions\HeaderActions\ReadingAllReports.cs" />
     <Compile Include="MemberActions\EmpFreelActions\ReadingReport.cs" />
     <Compile Include="MemberActions\HeaderActions\ReadingMemberReport.cs" />
-    <Compile Include="ValidInputValue.cs" />
+    <Compile Include="Messages\HeaderMessage.cs" />
+    <Compile Include="Messages\StandardMessage.cs" />
+    <Compile Include="GeneralActions\ValidInputValue.cs" />
     <Compile Include="MemberActions\TypeOfAction\TypeOfAction.cs" />
     <Compile Include="MemberActions\TypeOfAction\HeaderTypeOfAction.cs" />
     <Compile Include="GeneralActions\DatePeriod.cs" />
-    <Compile Include="Messages\EmployeeMessage.cs" />
     <Compile Include="Messages\ErrorMessage.cs" />
-    <Compile Include="Messages\FreelancerMessage.cs" />
-    <Compile Include="Messages\HeaderMessage.cs" />
     <Compile Include="Members\Freelancer.cs" />
     <Compile Include="Members\Employee.cs" />
     <Compile Include="Members\Header.cs" />
     <Compile Include="Members\IMember.cs" />
     <Compile Include="Initialization.cs" />
     <Compile Include="MembersInCompany.cs" />
-    <Compile Include="Messages\IHeaderMessage.cs" />
-    <Compile Include="Messages\IMemberMessage.cs" />
-    <Compile Include="Messages\MemberMessage.cs" />
     <Compile Include="Path.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Messages\StandardMessage.cs" />
-    <Compile Include="Information.cs" />
+    <Compile Include="MemberInformation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -12,16 +12,15 @@ namespace SalaryCalculator
         {
             try
             {
-                Console.WriteLine($"Отчет по сотруднику: {member.Name} за период с {DatePeriod.StartDate.ToShortDateString()} " +
-                    $"по {DatePeriod.FinishDate.ToShortDateString()}");
+                StandardMessage.ReportForPeriod();
 
                 CalcSalary.GetSalaryOfMember(member);
 
-                Console.WriteLine($"Итого: {member.Hours} часов," + $" заработано: {member.Salary} руб");
+                StandardMessage.TotalHoursAndSalary(member);
             }
             catch (Exception)
             {
-                Console.WriteLine("Некорректный ввод даты! Попробуйте еще раз.");
+                ErrorMessage.IsNotCorrectDate(member);
                 ReadReportAndSalary(member);
             }
         }
