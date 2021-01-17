@@ -13,13 +13,13 @@ namespace SalaryCalculator
             HeaderMessage.EnterNameOfMember();
             string name = ValidInputValue.GetName();
 
-            StandardMessage.ReportForPeriod();
-
-            foreach (var member in MembersInCompany.members)
+            foreach (var member in ReaderMembersAndReports.members)
             {
                 if (member.Name == name)
                 {
-                    foreach (var report in MembersInCompany.reportOfMembers)
+                    StandardMessage.ReportForPeriod();
+
+                    foreach (var report in ReaderMembersAndReports.reportOfMembers)
                     {
                         string[] dataOfReport = report.Split(new char[] { ',' });
 
@@ -29,10 +29,13 @@ namespace SalaryCalculator
 
                         }
                     }
-                    HeaderMessage.MemberHoursAndSalaryForPeriod(member);
-                    break;
+                    StandardMessage.MemberHoursAndSalaryForPeriod(member);
+                    return;
                 }
             }
+
+            ErrorMessage.MemberIsNotExists();
+            ReadMemberReport();
         }
     }
 }

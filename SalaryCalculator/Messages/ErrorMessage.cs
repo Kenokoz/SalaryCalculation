@@ -18,19 +18,29 @@ namespace SalaryCalculator
             Console.WriteLine("Введите корректное имя.");
         }
 
+        public static void InputHourIsNotCorrect()
+        {
+            Console.WriteLine("Введите корректное количество часов (цифра).");
+        }
+
         public static void InputPostIsNotCorrect()
         {
             Console.WriteLine("Введите корректную должность.");
         }
 
-        public static void CanNotAddHoursBeforeTwoDays()
+        public static void InputAnswerIsNotCorrect()
         {
-            Console.WriteLine("Вы не можете добавлять часы раньше, чем за 2 дня");
+            Console.WriteLine("Введите корректный ответ.");
         }
 
-        public static void IsNotCorrectDate(IMember member)
+        public static void CanNotAddHoursBeforeTwoDays()
         {
-            Console.WriteLine($"Итого: {member.Hours} часов," + $" заработано: {member.Salary} руб");
+            Console.WriteLine("Вы не можете добавлять часы раньше, чем за 2 дня.");
+        }
+
+        public static void IsNotCorrectDate()
+        {
+            Console.WriteLine("Введите корректную дату.");
         }
 
         public static void PostNotExist()
@@ -38,14 +48,16 @@ namespace SalaryCalculator
             Console.WriteLine("Такой должности не существует. Повторите попытку.");
         }
 
-        public static void MemberExists()
+        public static void MemberIsWritten()
         {
-            Console.WriteLine("Такое имя уже записано!");
+            Console.WriteLine("Такое имя уже записано! Повторите попытку.");
         }
 
         public static void WrongAction()
         {
-            Console.WriteLine("Неверное действие. Нажмите enter, чтобы повторить попытку");
+            Console.WriteLine("Неверное действие. Нажмите enter, чтобы повторить попытку.");
         }
+
+        
     }
 }

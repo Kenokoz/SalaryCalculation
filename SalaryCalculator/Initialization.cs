@@ -14,21 +14,19 @@ namespace SalaryCalculator
             StandardMessage.EnterName();
             string inputName = ValidInputValue.GetName();
                        
-            foreach (var member in MembersInCompany.members)
+            foreach (var member in ReaderMembersAndReports.members)
             {
                 //DataOfMember.GetDataOfMember(person);
                 if (member.Name == inputName)
                 {
                     IMember person = CreateModel(member);
-                    
+                    Console.Clear();
                     if (person.Post == "header")
                     {
-                        HeaderMessage.GreetMessageForHeader(person);
                         HeaderTypeOfAction.ChooseAction(person);
                     }
                     else
                     {
-                        StandardMessage.GreetMessageForEmpAndFreelan(person);
                         TypeOfAction.ChooseAction(person);
                     }
 
@@ -45,11 +43,11 @@ namespace SalaryCalculator
             switch (member.Post)
             {
                 case "header":
-                    return new Header { Name = member.Name, Post = member.Post };
+                    return new HeaderModel { Name = member.Name, Post = member.Post };
                 case "employee":
-                    return new Employee { Name = member.Name, Post = member.Post };
+                    return new EmployeeModel { Name = member.Name, Post = member.Post };
                 default:
-                    return new Freelancer { Name = member.Name, Post = member.Post };
+                    return new FreelancerModel { Name = member.Name, Post = member.Post };
             }
         }
     }

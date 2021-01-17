@@ -13,25 +13,27 @@ namespace SalaryCalculator
             HeaderMessage.EnterNameOfMember();
             string name = ValidInputValue.GetName();
 
-            StandardMessage.EnterDateToAddHours();
-            DateTime enterDate = DateTime.Parse(Console.ReadLine());
-            MemberInformation.Date = enterDate.ToShortDateString();
-
-            StandardMessage.EnterAmountOfHours();
-            MemberInformation.Hours = int.Parse(Console.ReadLine());
-
-            HeaderMessage.EnterWhatMemberDid();
-            MemberInformation.Doing = Console.ReadLine();
-
-            foreach (var memb in MembersInCompany.members)
+            foreach (var memb in ReaderMembersAndReports.members)
             {
                 if (memb.Name == name)
                 {
-                    MemberInformation.WriteHoursOfMember(name, memb.Post);
-                    break;
+                    StandardMessage.EnterDateToAddHours();
+                    DateTime enterDate = ValidInputValue.GetDate();
+                    ReportWriter.Date = enterDate.ToShortDateString();
+
+                    StandardMessage.EnterAmountOfHours();
+                    ReportWriter.Hours = ValidInputValue.GetHours();
+
+                    HeaderMessage.EnterWhatMemberDid();
+                    ReportWriter.Doing = Console.ReadLine();
+
+                    ReportWriter.WriteHoursOfMember(name, memb.Post);
+                    return;
                 }
             }
 
+            ErrorMessage.MemberIsNotExists();
+            AddHoursForMember();
         }
     }
 }

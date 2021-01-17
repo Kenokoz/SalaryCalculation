@@ -14,14 +14,14 @@ namespace SalaryCalculator
         private static DateTime GetStartDate()
         {
             StandardMessage.EnterFromDate();
-            DateTime dateStart = DateTime.Parse(Console.ReadLine());
+            DateTime dateStart = ValidInputValue.GetDate();
             return dateStart;
         }
 
         private static DateTime GetFinishDate()
         {
             StandardMessage.EnterToDate();
-            DateTime dateFinish = DateTime.Parse(Console.ReadLine());
+            DateTime dateFinish = ValidInputValue.GetDate();
             return dateFinish;
         }
     }

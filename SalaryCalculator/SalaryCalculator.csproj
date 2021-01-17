@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneralActions\CalcSalary.cs" />
+    <Compile Include="GeneralActions\Continue.cs" />
     <Compile Include="MemberActions\EmpFreelActions\AddingHours.cs" />
     <Compile Include="MemberActions\HeaderActions\AddingHoursForMember.cs" />
     <Compile Include="MemberActions\HeaderActions\AddingMember.cs" />
@@ -57,16 +58,16 @@
     <Compile Include="MemberActions\TypeOfAction\HeaderTypeOfAction.cs" />
     <Compile Include="GeneralActions\DatePeriod.cs" />
     <Compile Include="Messages\ErrorMessage.cs" />
-    <Compile Include="Members\Freelancer.cs" />
-    <Compile Include="Members\Employee.cs" />
-    <Compile Include="Members\Header.cs" />
+    <Compile Include="Members\FreelancerModel.cs" />
+    <Compile Include="Members\EmployeeModel.cs" />
+    <Compile Include="Members\HeaderModel.cs" />
     <Compile Include="Members\IMember.cs" />
     <Compile Include="Initialization.cs" />
-    <Compile Include="MembersInCompany.cs" />
+    <Compile Include="ReaderMembersAndReports.cs" />
     <Compile Include="Path.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MemberInformation.cs" />
+    <Compile Include="GeneralActions\ReportWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

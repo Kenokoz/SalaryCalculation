@@ -41,5 +41,37 @@ namespace SalaryCalculator
                 }
             }
         }
+
+        public static int GetHours()
+        {
+            try
+            {
+                int hours = int.Parse(Console.ReadLine());
+                return hours;
+            }
+            catch (Exception)
+            {
+                ErrorMessage.InputHourIsNotCorrect();
+                GetHours();
+            }
+            return -1;
+        }
+
+        public static DateTime GetDate()
+        {
+            DateTime date = DateTime.Now;
+            try
+            {
+                date = DateTime.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                ErrorMessage.IsNotCorrectDate();
+                GetDate();
+            }
+
+            return date;
+        }
+
     }
 }

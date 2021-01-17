@@ -10,19 +10,12 @@ namespace SalaryCalculator
     {
         public static void ReadReportAndSalary(IMember member)
         {
-            try
-            {
-                StandardMessage.ReportForPeriod();
+            StandardMessage.ReportForPeriod();
 
-                CalcSalary.GetSalaryOfMember(member);
+            CalcSalary.GetSalaryOfMember(member);
 
-                StandardMessage.TotalHoursAndSalary(member);
-            }
-            catch (Exception)
-            {
-                ErrorMessage.IsNotCorrectDate(member);
-                ReadReportAndSalary(member);
-            }
+            StandardMessage.TotalHoursAndSalary(member);
+
         }
     }
 }

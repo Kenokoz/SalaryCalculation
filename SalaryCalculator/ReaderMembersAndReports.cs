@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator
 {
-    public class MembersInCompany
+    public class ReaderMembersAndReports
     {
         public static List<IMember> members = GetMembersList();
         public static List<string> reportOfMembers = GetReportOfMembers();
@@ -25,13 +25,13 @@ namespace SalaryCalculator
                     switch (dataOfMember[1])
                     {
                         case "header":
-                            members.Add(new Header { Name = dataOfMember[0], Post = dataOfMember[1] });
+                            members.Add(new HeaderModel { Name = dataOfMember[0], Post = dataOfMember[1] });
                             break;
                         case "employee":
-                            members.Add(new Employee { Name = dataOfMember[0], Post = dataOfMember[1] });
+                            members.Add(new EmployeeModel { Name = dataOfMember[0], Post = dataOfMember[1] });
                             break;
                         case "freelancer":
-                            members.Add(new Freelancer { Name = dataOfMember[0], Post = dataOfMember[1] });
+                            members.Add(new FreelancerModel { Name = dataOfMember[0], Post = dataOfMember[1] });
                             break;
                     }
                 }

@@ -12,7 +12,7 @@ namespace SalaryCalculator
         {
             int sumHours = 0;
 
-            foreach (var report in MembersInCompany.reportOfMembers)
+            foreach (var report in ReaderMembersAndReports.reportOfMembers)
             {
                 string[] personRep = report.Trim().Split(new char[] { ',' });
                 string dateOfPersonRep = personRep[0];

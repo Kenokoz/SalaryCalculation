@@ -15,8 +15,8 @@ namespace SalaryCalculator
             while (!isDateCorrect)
             {
                 StandardMessage.EnterDateToAddHours();
-                DateTime enterDate = DateTime.Parse(Console.ReadLine());
-                MemberInformation.Date = enterDate.ToShortDateString();
+                DateTime enterDate = ValidInputValue.GetDate();
+                ReportWriter.Date = enterDate.ToShortDateString();
 
                 if (member.Post == "freelancer")
                 {
@@ -36,12 +36,13 @@ namespace SalaryCalculator
             }
 
             StandardMessage.EnterAmountOfHours();
-            MemberInformation.Hours = int.Parse(Console.ReadLine());
+            ReportWriter.Hours = ValidInputValue.GetHours();
 
             StandardMessage.EnterWhatYouDid();
-            MemberInformation.Doing = Console.ReadLine();
+            ReportWriter.Doing = Console.ReadLine();
 
-            MemberInformation.WriteHoursOfMember(member.Name, member.Post);
+            ReportWriter.WriteHoursOfMember(member.Name, member.Post);
+
         }
     }
 }

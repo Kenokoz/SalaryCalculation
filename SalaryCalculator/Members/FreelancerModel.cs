@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator
 {
-    public class Freelancer : IMember
+    public class FreelancerModel : IMember
     {
         public string Name { get; set; }
         public string Post { get; set; }

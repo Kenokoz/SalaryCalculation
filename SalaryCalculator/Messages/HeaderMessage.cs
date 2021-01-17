@@ -41,6 +41,9 @@ namespace SalaryCalculator
                     $"по {DatePeriod.FinishDate.ToShortDateString()}");
         }
 
-
+        public static void MemberAdded()
+        {
+            Console.Write("Сотрудник успешно добавлен.");
+        }
     }
 }

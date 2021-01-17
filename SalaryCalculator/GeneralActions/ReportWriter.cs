@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SalaryCalculator
 {
-    public class MemberInformation
+    public class ReportWriter
     {
         public static string Date { get; set; }
         public static int Hours { get; set; }
@@ -33,6 +33,7 @@ namespace SalaryCalculator
             using (StreamWriter sr = new StreamWriter(path, true))
             {
                 sr.WriteLine($"{Date},{name},{Hours},{Doing}");
+                StandardMessage.HoursAdded();
             }
         }
     }

@@ -25,16 +25,16 @@ namespace SalaryCalculator
 
         public static void EnterFromDate()
         {
-            Console.WriteLine("Введите с какого числа:");
+            Console.WriteLine("Введите с какого числа (формат 01.01.2001):");
         }
 
         public static void EnterToDate()
         {
-            Console.WriteLine("Введите по какое число:");
+            Console.WriteLine("Введите по какое число (формат 01.01.2001):");
         }
         public static void EnterDateToAddHours()
         {
-            Console.WriteLine("Введите дату, в которую нужно добавить часы:");
+            Console.WriteLine("Введите дату, в которую нужно добавить часы (формат 01.01.2001):");
         }
 
         public static void EnterAmountOfHours()
@@ -50,18 +50,28 @@ namespace SalaryCalculator
         public static void ReportForPeriod()
         {
             Console.WriteLine($"Отчет за период с {DatePeriod.StartDate.ToShortDateString()} по " +
-                    $"{DatePeriod.FinishDate.ToShortDateString()}");
+                    $"{DatePeriod.FinishDate.ToShortDateString()}:");
         }
 
         public static void TotalHoursAndSalary(IMember member)
         {
-            Console.WriteLine($"Итого: {member.Hours} часов," + $" заработано: {member.Salary} руб");
+            Console.WriteLine($"Итого: {member.Hours} часов," + $" заработано: {member.Salary} руб.");
         }
 
         public static void MemberHoursAndSalaryForPeriod(IMember member)
         {
             Console.WriteLine($"{member.Name} отработал {member.Hours} часов и " +
                             $"заработал за период {member.Salary} руб");
+        }
+
+        public static void HoursAdded()
+        {
+            Console.Write("Часы успешно добавлены. ");
+        }
+
+        public static void Continue()
+        {
+            Console.WriteLine("Хотите продолжить? 'Y' (ДА), 'N' (НЕТ)");
         }
 
     }

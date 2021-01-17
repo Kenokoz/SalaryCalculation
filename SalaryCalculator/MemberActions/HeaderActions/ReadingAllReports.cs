@@ -12,9 +12,9 @@ namespace SalaryCalculator
         {
             StandardMessage.ReportForPeriod();
 
-            foreach (var member in MembersInCompany.members)
+            foreach (var member in ReaderMembersAndReports.members)
             {
-                foreach (var report in MembersInCompany.reportOfMembers)
+                foreach (var report in ReaderMembersAndReports.reportOfMembers)
                 {
                     string[] dataOfReport = report.Split(new char[] { ',' });
 
@@ -24,7 +24,7 @@ namespace SalaryCalculator
                         
                     }
                 }
-                HeaderMessage.MemberHoursAndSalaryForPeriod(member);
+                StandardMessage.MemberHoursAndSalaryForPeriod(member);
             }
 
         }
